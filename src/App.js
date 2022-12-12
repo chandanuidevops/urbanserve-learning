@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import RootApp from "./Containers/RootApp/index";
+import { store } from "./Stores/store";
+import { Provider } from "react-redux";
+import { BrowserRouter as Router } from "react-router-dom";
+import { ThemeProvider } from "@mui/material/styles";
+import { customTheme } from "./theme";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <ThemeProvider theme={customTheme}>
+        <Router>
+          <RootApp />
+        </Router>
+      </ThemeProvider>
+    </Provider>
   );
 }
 
