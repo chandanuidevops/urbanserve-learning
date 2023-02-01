@@ -10,6 +10,7 @@ import Loader from "../../Components/Loader";
 import PrivateRoute from "../../Components/PrivateRoute";
 import { PropTypes } from "prop-types";
 import { Routes, Route, Link } from "react-router-dom";
+
 import Users from './../Users/index';
 const { check } = actions;
 function RootApp({ isAuthenticating, checkAuth, isLoggingIn }) {
